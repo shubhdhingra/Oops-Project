@@ -6,7 +6,7 @@ class Category
 {
 protected:
 string cat_name;
-int cat_noc;
+//int cat_noc;
 public:
 Category();
 Category(string name,int n);
@@ -18,24 +18,24 @@ void output();
 };
 Category::Category()
 {
-	cat_noc=0;
+	//cat_noc=0;
 }
 Category::Category(string a,int n)
 {
 	cat_name=a;
-	cat_noc=n;
+	//cat_noc=n;
 }
 string Category::get_name()const
 {
 	return cat_name;
 }
-int Category::get_noc()const
+/*int Category::get_noc()const
 {
 	return cat_noc;
-}
+}*/
 void Category::update()
 {
-	cout<<"\t\tTo Update\n 1.Categtory Name\n 2.Number of Car\nEnter Choice ";
+	cout<<"\t\tTo Update\n 1.Categtory Name\n Enter Choice ";
 	int ch;
 	cin>>ch;
 	string a;
@@ -48,12 +48,12 @@ void Category::update()
 		        cat_name=a;
 		        cout<<"Success\n";
 		        break;
-		case 2: cout<<"\nEnter New Number of Car ";
+	/*	case 2: cout<<"\nEnter New Number of Car ";
 		        cin>>t;
 		        cat_noc=t;
 		        cout<<"Success\n";
 		        break;
-	}
+	*/}
 }
 void Category::SetValue()
 {
@@ -64,7 +64,7 @@ void Category::SetValue()
 void Category::output()
 {
 	cout<<"Category Name :"<<cat_name<<endl;
-	cout<<"Number of Cars produced :"<<cat_noc<<endl;
+	//cout<<"Number of Cars produced :"<<cat_noc<<endl;
 }
 
 #endif

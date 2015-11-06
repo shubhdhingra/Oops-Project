@@ -6,14 +6,14 @@ class Category
 {
 protected:
 string cat_name;
-int cat_noc;
+//int cat_noc;
 public:
 Category();
 Category(string name,int n);
 void update();
 void SetValue();
 string get_name() const;
-int get_noc() const;
+//int get_noc() const;
 void output();	
 };
 #endif
