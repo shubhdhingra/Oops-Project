@@ -57,8 +57,9 @@ void Category::update()
 }
 void Category::SetValue()
 {
-	cout<<"Category Name :"<<cat_name<<endl;
+	cout<<"Category Name :"<<cat_name<<" ";
 	cin>>cat_name;
+	cout<<endl;
 }
 void Category::output()
 {

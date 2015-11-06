@@ -57,12 +57,15 @@ void Dealer::update()
 }
 void Dealer::SetValue()
 {
-	cout<<"Dealer Name : "<<endl;
+	cout<<"Dealer Name : "<<" ";
 	cin>>d_name;
-	cout<<"Dealer Address : "<<endl;
+	cout<<endl;
+	cout<<"Dealer Address : "<<" ";
 	cin>>d_add;
-	cout<<"Dealer License Number : "<<endl;
+	cout<<endl;
+	cout<<"Dealer License Number : "<<" ";
 	cin>>l_no;
+	cout<<endl;
 }
 string Dealer::get_name() const
 {

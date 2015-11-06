@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #include "Dealer.h"
+#include "Category.h"
 #ifndef COMPANY_H
 #define COMPANY_H
 
@@ -10,31 +11,43 @@ class Company
 		string c_name;
 		string c_add;
 		Dealer c[5001];
+		Category *cat[6];
 		int c_nod;
+		int c_noc;
 	public:
 		     Company();
 			 Company(string name,string add);
 			 string get_name() const;
 			 void newdealer();
+			 void newcategory();
 			 string get_add() const;
 			 void update();
 			 string Dlr_name() const;
 			 string Dlr_add() const;
 			 string Dlr_lno() const;
 			 int get_nod() const;
+			 int get_noc() const;
 			 void output();
 };
 
 Company::Company()
 {
 	c_nod=0;
+	c_noc=0;
+	cat[c_noc]=new Category();
+	cat[c_noc]->SetValue();
 	c[c_nod].SetValue();
-	c_nod=1;	
+	c_nod=1;
+	c_noc=1;	
 }
 Company::Company(string name,string add)
 {
 	c_nod=0;
+	c_noc=0;
+	cat[c_noc]=new Category();
+	cat[c_noc]->SetValue();
 	c[c_nod].SetValue();
+	c_noc=1;
 	c_nod=1;	
 	c_name=name;
 	c_add=add;
@@ -43,6 +56,13 @@ void Company::newdealer()
 {
 	c[c_nod].SetValue();
 	c_nod++;	
+}
+void Company::newcategory()
+{
+	//c_noc=0;
+	cat[c_noc]=new Category();
+	cat[c_noc]->SetValue();
+	c_noc++;
 }
 string Company::get_name() const
 {
@@ -56,17 +76,27 @@ int Company::get_nod() const
 {
 	return c_nod;
 }
+int Company::get_noc() const
+{
+	return c_noc;
+}
+
 void Company::output()
 {
 	cout<<"Company Name :"<<c_name<<endl;
 	cout<<"Company Address :"<<c_add<<endl;
 	cout<<"Number Of Dealers :"<<c_nod<<endl;
+	cout<<"Dealer Info\n";
 	for(int i=0;i<c_nod;i++)
 	c[i].output();
+	cout<<"Number Of Category :"<<c_noc<<endl;
+	cout<<"Category Info\n";
+	for(int i=0;i<c_noc;i++)
+	cat[i]->output();
 }
 void Company::update()
 {
-	cout<<"\t\tTo Update\n 1.Company Name\n 2.Company Address\n 3.Number of Dealers\n 4.Dealer Info \nEnter Choice ";
+	cout<<"\t\tTo Update\n 1.Company Name\n 2.Company Address\n 3.Number of Dealers\n 4.Dealer Info \n 5.Category Info \nEnter Choice ";
 	int ch;
 	cin>>ch;
 	string a;
@@ -100,6 +130,18 @@ void Company::update()
 						break;
 					}
 			   }
+		case 5:cout<<"Enter Category Name\n";
+		       cin>>a;
+	           for(int i=0;i<c_noc;i++)//Exception Handling Required
+	           {
+					string b=cat[i]->get_name();
+					if(b==a)
+					{
+						cat[i]->update();
+						break;
+					}
+			   			   	   
+				}
 	}
 }
 

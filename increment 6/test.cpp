@@ -5,9 +5,9 @@ int main()
 {
 	Company a("MAruti","Nithari");
 	//a.output();
-	a.newdealer();
+	//a.newdealer();
 	a.output();
-	a.update();
-	a.output();
+	//a.update();
+	//a.output();
 	return 0;
 }
