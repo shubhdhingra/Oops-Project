@@ -4,7 +4,7 @@ using namespace std;
 #include "Model.h"
 #ifndef COMPANY_H
 #define COMPANY_H
-
+//Class Definition
 class Company
 {
 	protected:
