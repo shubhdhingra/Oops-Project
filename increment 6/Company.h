@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #include "Dealer.h"
-#include "Category.h"
+#include "Model.h"
 #ifndef COMPANY_H
 #define COMPANY_H
 
@@ -11,7 +11,7 @@ class Company
 		string c_name;
 		string c_add;
 		Dealer c[5001];
-		Category *cat[6];
+		Model *c_car[5000];
 		int c_nod;
 		int c_noc;
 	public:
@@ -19,7 +19,7 @@ class Company
 			 Company(string name,string add);
 			 string get_name() const;
 			 void newdealer();
-			 void newcategory();
+			 void newcar();
 			 string get_add() const;
 			 void update();
 			 string Dlr_name() const;
@@ -34,8 +34,8 @@ Company::Company()
 {
 	c_nod=0;
 	c_noc=0;
-	cat[c_noc]=new Category();
-	cat[c_noc]->SetValue();
+	c_car[c_noc]=new Model();
+	c_car[c_noc]->SetValue();
 	c[c_nod].SetValue();
 	c_nod=1;
 	c_noc=1;	
@@ -44,8 +44,8 @@ Company::Company(string name,string add)
 {
 	c_nod=0;
 	c_noc=0;
-	cat[c_noc]=new Category();
-	cat[c_noc]->SetValue();
+	c_car[c_noc]=new Model();
+	c_car[c_noc]->SetValue();
 	c[c_nod].SetValue();
 	c_noc=1;
 	c_nod=1;	
@@ -57,11 +57,11 @@ void Company::newdealer()
 	c[c_nod].SetValue();
 	c_nod++;	
 }
-void Company::newcategory()
+void Company::newcar()
 {
 	//c_noc=0;
-	cat[c_noc]=new Category();
-	cat[c_noc]->SetValue();
+	c_car[c_noc]=new Model();
+	c_car[c_noc]->SetValue();
 	c_noc++;
 }
 string Company::get_name() const
@@ -89,14 +89,14 @@ void Company::output()
 	cout<<"Dealer Info\n";
 	for(int i=0;i<c_nod;i++)
 	c[i].output();
-	cout<<"Number Of Category :"<<c_noc<<endl;
-	cout<<"Category Info\n";
+	cout<<"Number Of Cars :"<<c_noc<<endl;
+	cout<<"Car Info\n";
 	for(int i=0;i<c_noc;i++)
-	cat[i]->output();
+	c_car[i]->output();
 }
 void Company::update()
 {
-	cout<<"\t\tTo Update\n 1.Company Name\n 2.Company Address\n 3.Number of Dealers\n 4.Dealer Info \n 5.Category Info \nEnter Choice ";
+	cout<<"\t\tTo Update\n 1.Company Name\n 2.Company Address\n 3.Number of Dealers\n 4.Dealer Info \nEnter Choice ";
 	int ch;
 	cin>>ch;
 	string a;
@@ -130,18 +130,7 @@ void Company::update()
 						break;
 					}
 			   }
-		case 5:cout<<"Enter Category Name\n";
-		       cin>>a;
-	           for(int i=0;i<c_noc;i++)//Exception Handling Required
-	           {
-					string b=cat[i]->get_name();
-					if(b==a)
-					{
-						cat[i]->update();
-						break;
-					}
-			   			   	   
-				}
+			   break;
 	}
 }
 

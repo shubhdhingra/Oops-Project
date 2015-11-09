@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #include "Dealer.h"
-#include "Category.h"
+#include "Model.h"
 #ifndef COMPANY_H
 #define COMPANY_H
 
@@ -11,7 +11,7 @@ class Company
 		string c_name;
 		string c_add;
 		Dealer c[5001];
-		Category *cat[6];
+		Model *c_car[5001];
 		int c_nod;
 		int c_noc;
 	public:
@@ -19,7 +19,7 @@ class Company
 			 Company(string name,string add);
 			 string get_name() const;
 			 void newdealer();
-			 void newcategory();
+			 void newcar();
 			 string get_add() const;
 			 void update();
 			 string Dlr_name() const;

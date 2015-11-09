@@ -85,7 +85,7 @@ void Model::output()
 	cout<<"Colours : \n";
 	for(int j=0;j<noc;j++)
 	{
-		cout<<colour[j];
+		cout<<colour[j]<<endl;
 	}
 	i.output();
 	e.output();

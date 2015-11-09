@@ -97,7 +97,7 @@ void Exterior::Setvalue()
 void Exterior::output()
 {
 	cout<<".....Exterior Specification.......\n";
-	cout<<"Specification/t/tStatus";
+	cout<<"Specification\t\tStatus";
 	
 	cout<<"keyless enter\t\t"<<keyless_entr;
 	cout<<endl;

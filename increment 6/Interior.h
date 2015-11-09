@@ -121,7 +121,7 @@ void Interior::Setvalue()
 void Interior::output()
 {
 	cout<<".....Interior Specification.......\n";
-	cout<<"Specification/t/tStatus";
+	cout<<"Specification\t\tStatus";
 	
 	cout<<"abs\t\t"<<abs;
 	cout<<endl;

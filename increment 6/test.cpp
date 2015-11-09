@@ -3,11 +3,8 @@
 #include "Dealer.h"
 int main()
 {
-	Company a("MAruti","Nithari");
-	//a.output();
-	//a.newdealer();
+	Model a;
+	a.SetValue();
 	a.output();
-	//a.update();
-	//a.output();
 	return 0;
 }
