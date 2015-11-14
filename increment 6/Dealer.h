@@ -15,8 +15,8 @@ void update();
 void SetValue();
 string get_name() const;
 string get_add() const;
-string get_lno() const;
-void output();	
+string get_lno() const;	
+friend void print_dealer(Dealer d);
 };
 Dealer::Dealer()
 {
@@ -80,11 +80,10 @@ string Dealer::get_lno() const
 	return l_no;
 }
 
-void Dealer::output()
+void print_dealer(Dealer d)
 {
-	cout<<"Dealer Name :"<<d_name<<endl;
-	cout<<"Dealer Address :"<<d_add<<endl;
-	cout<<"Dealer License Number :"<<l_no<<endl;
+	cout<<"Dealer Name :"<<d.d_name<<endl;
+	cout<<"Dealer Address :"<<d.d_add<<endl;
+	cout<<"Dealer License Number :"<<d.l_no<<endl;
 }
-
 #endif

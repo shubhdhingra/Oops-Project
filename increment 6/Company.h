@@ -88,12 +88,15 @@ void Company::output()
 	cout<<"Number Of Dealers :"<<c_nod<<endl;
 	cout<<"Dealer Info\n";
 	for(int i=0;i<c_nod;i++)
-	c[i].output();
+	print_dealer(c[i]);
 	cout<<"Number Of Cars :"<<c_noc<<endl;
 	cout<<"Car Info\n";
 	for(int i=0;i<c_noc;i++)
 	c_car[i]->output();
 }
+
+
+
 void Company::update()
 {
 	cout<<"\t\tTo Update\n 1.Company Name\n 2.Company Address\n 3.Number of Dealers\n 4.Dealer Info \nEnter Choice ";

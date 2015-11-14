@@ -3,8 +3,8 @@
 #include "Dealer.h"
 int main()
 {
-	Model a;
-	a.SetValue();
+	Company a("SUV","Noida");
+//	a.SetValue();
 	a.output();
 	return 0;
 }

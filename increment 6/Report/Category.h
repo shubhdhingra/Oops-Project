@@ -9,7 +9,7 @@ string cat_name;
 //int cat_noc;
 public:
 Category();
-Category(string name,int n);
+Category(string name);
 void update();
 void SetValue();
 string get_name() const;

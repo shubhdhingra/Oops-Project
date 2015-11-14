@@ -16,6 +16,6 @@ void SetValue();
 string get_name() const;
 string get_add() const;
 string get_lno() const;
-void output();	
+friend void print_dealer(Dealer d);	
 };
 #endif
